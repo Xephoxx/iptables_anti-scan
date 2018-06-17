@@ -38,11 +38,11 @@ iptables -A OUTPUT -o lo -p udp --sport 123 -j ACCEPT
 iptables -A OUTPUT -p udp --dport 123:123 -m state --state NEW,ESTABLISHED -j ACCEPT
 
 # Allow outgoing SSH only to a specific network
-#iptables -A OUTPUT -o eth0 -p tcp -d 192.168.101.0/24 --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
+#iptables -A OUTPUT -o eth0 -p tcp -d x.x.x.x/24 --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
 #iptables -A INPUT -i eth0 -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT
 
 #  Allow incoming SSH only from a specific network
-#iptables -A INPUT -i eth0 -p tcp -s 192.168.200.0/24 --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
+#iptables -A INPUT -i eth0 -p tcp -s x.x.x.x/24 --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
 #iptables -A OUTPUT -o eth0 -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT
 
 # Allow SSH (eg serveur)
